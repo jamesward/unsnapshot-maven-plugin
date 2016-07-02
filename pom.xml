@@ -10,7 +10,7 @@
 
     <groupId>com.jamesward</groupId>
     <artifactId>unsnapshot-maven-plugin</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>unSNAPSHOT Maven Plugin</name>
     <description>Provides a property that removes the SNAPSHOT from a version</description>
@@ -40,7 +40,7 @@
         <url>http://github.com/jamesward/unsnapshot-maven-plugin</url>
         <connection>scm:git:https://github.com/jamesward/unsnapshot-maven-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/jamesward/unsnapshot-maven-plugin.git</developerConnection>
-        <tag>unsnapshot-maven-plugin-0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
