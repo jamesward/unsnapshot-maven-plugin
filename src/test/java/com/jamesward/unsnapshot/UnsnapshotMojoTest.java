@@ -36,4 +36,17 @@ public class UnsnapshotMojoTest extends AbstractMojoTestCase {
         assertEquals("0.0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_UNSNAPSHOT));
     }
 
+    public void testWithRevision() throws Exception {
+        File testPom = getTestFile("src/test/resources/with-revision/pom.xml");
+        assertNotNull(testPom);
+        assertTrue(testPom.exists());
+
+        UnsnapshotMojo mojo = (UnsnapshotMojo) lookupMojo("unsnapshot", testPom);
+        assertNotNull(mojo);
+
+        mojo.execute();
+
+        assertEquals("0.0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_UNREVISE));
+    }
+
 }
