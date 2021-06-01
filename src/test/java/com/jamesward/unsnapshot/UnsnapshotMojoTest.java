@@ -21,6 +21,7 @@ public class UnsnapshotMojoTest extends AbstractMojoTestCase {
         mojo.execute();
 
         assertEquals("0.0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_UNSNAPSHOT));
+        assertEquals("0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_NOPATCH));
     }
 
     public void testNonSnapshot() throws Exception {
@@ -34,6 +35,7 @@ public class UnsnapshotMojoTest extends AbstractMojoTestCase {
         mojo.execute();
 
         assertEquals("0.0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_UNSNAPSHOT));
+        assertEquals("0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_NOPATCH));
     }
 
     public void testWithRevision() throws Exception {
@@ -47,6 +49,7 @@ public class UnsnapshotMojoTest extends AbstractMojoTestCase {
         mojo.execute();
 
         assertEquals("0.0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_UNREVISE));
+        assertEquals("0.0", mojo.project.getModel().getProperties().getProperty(UnsnapshotMojo.VERSION_NOPATCH));
     }
 
 }

@@ -11,6 +11,7 @@ public class UnsnapshotMojo extends AbstractMojo {
 
     static final String VERSION_UNSNAPSHOT = "version.unsnapshot";
     static final String VERSION_UNREVISE = "version.unrevise";
+    static final String VERSION_NOPATCH = "version.nopatch";
 
     @Component
     protected MavenProject project;
@@ -29,5 +30,17 @@ public class UnsnapshotMojo extends AbstractMojo {
 
         project.getProperties().setProperty(VERSION_UNREVISE, unreviseVersion);
         project.getModel().getProperties().setProperty(VERSION_UNREVISE, unreviseVersion);
+
+        String nopatch = version;
+        String[] parts = version.split("\\.");
+        if (parts.length >= 2) {
+            nopatch = parts[0] + "." + parts[1];
+        }
+        else if (parts.length == 1) {
+            nopatch = parts[0];
+        }
+
+        project.getProperties().setProperty(VERSION_NOPATCH, nopatch);
+        project.getModel().getProperties().setProperty(VERSION_NOPATCH, nopatch);
     }
 }

@@ -14,7 +14,7 @@
     <packaging>maven-plugin</packaging>
     <name>unSNAPSHOT Maven Plugin</name>
     <description>Provides a property that removes the SNAPSHOT from a version</description>
-    <url>http://jamesward.com</url>
+    <url>https://jamesward.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -89,7 +89,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
